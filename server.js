@@ -1,23 +1,24 @@
 const express = require('express');
-const path = require('path');
-
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// Load SSL certificate and key
 const options = {
-    key: fs.readFileSync(path.join(__dirname, 'ssl', 'privkey.pem')),
-    cert: fs.readFileSync(path.join(__dirname, 'ssl', 'fullchain.pem')),
+  key: fs.readFileSync(path.join(__dirname, 'ssl', 'privkey.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'ssl', 'fullchain.pem')),
 };
 
+// Create HTTPS server
 const server = https.createServer(options, app);
 
-
-// Serve static files from the "static" directory
+// Define routes
 app.use(express.static(path.join(__dirname, 'static')));
 
 // Start the server
+const PORT = 3000;
 server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on https://localhost:${PORT}`);
 });
