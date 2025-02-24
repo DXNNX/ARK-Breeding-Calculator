@@ -17,4 +17,4 @@ COPY ssl /app/ssl
 EXPOSE 3000
 
 # Start the application
-CMD ["node", "app.js"]
+CMD ["node", "server.js"]
