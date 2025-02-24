@@ -10,9 +10,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Copy SSL certificate files
-COPY ssl /app/ssl
-
 # Expose the HTTPS port
 EXPOSE 3000
 
