@@ -9,6 +9,6 @@ services:
     env_file:
       - .env
     volumes:
-      - /etc/letsencrypt/live/www.dxnnx.cc:/app/ssl
-      - /etc/letsencrypt/archive/www.dxnnx.cc:/etc/letsencrypt/archive/www.dxnnx.cc
+      - /etc/letsencrypt/live/www.dxnnx.cc/privkey.pem:/app/ssl/privkey.pem
+      - /etc/letsencrypt/live/www.dxnnx.cc/privkey.pem:/etc/letsencrypt/live/www.dxnnx.cc/fullchain.pem
     build: .
