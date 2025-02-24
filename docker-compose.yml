@@ -3,7 +3,6 @@ services:
   breeding:
     image: breeding
     container_name: breeding
-    restart: unless-stopped
     ports:
       - "443:3000"
     env_file:

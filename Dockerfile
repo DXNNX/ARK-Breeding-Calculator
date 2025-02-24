@@ -1,7 +1,20 @@
-FROM node:18-alpine
+FROM node:18
 
+# Set the working directory
 WORKDIR /app
-COPY package.json /app
+
+# Copy package.json and install dependencies
+COPY package.json .
 RUN npm install
-COPY . /app
-CMD ["node","server.js"]
+
+# Copy the rest of the application code
+COPY . .
+
+# Copy SSL certificate files
+COPY ssl /app/ssl
+
+# Expose the HTTPS port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "app.js"]
