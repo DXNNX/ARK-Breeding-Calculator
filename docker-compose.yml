@@ -1,0 +1,13 @@
+version: '3'
+services:
+  breeding:
+    image: breeding
+    container_name: breeding
+    restart: unless-stopped
+    ports:
+      - "443:3000"
+    env_file:
+      - .env
+    volumes:
+      - /etc/letsencrypt/live/www.dxnnx.cc:/app/ssl
+    build: .
