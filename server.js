@@ -7,9 +7,9 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const options = {
-    key: fs.readFileSync(process.env.SSL_KEY_PATH),
-    cert: fs.readFileSync(process.env.SSL_CERT_PATH),
-  };
+    key: fs.readFileSync(path.join(__dirname, 'ssl', 'privkey.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'ssl', 'fullchain.pem')),
+};
 
 const server = https.createServer(options, app);
 
