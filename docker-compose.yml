@@ -10,4 +10,5 @@ services:
       - .env
     volumes:
       - /etc/letsencrypt/live/www.dxnnx.cc:/app/ssl
+      - /etc/letsencrypt/archive/www.dxnnx.cc:/etc/letsencrypt/archive/www.dxnnx.cc
     build: .
