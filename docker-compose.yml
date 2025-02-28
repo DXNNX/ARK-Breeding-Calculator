@@ -16,3 +16,4 @@ networks:
   dxnnx-network:
     driver: bridge
     external: true
+    name: dxnnx-network
