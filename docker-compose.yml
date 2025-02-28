@@ -10,3 +10,9 @@ services:
       - /etc/letsencrypt/live/www.dxnnx.cc/privkey.pem:/app/ssl/privkey.pem
       - /etc/letsencrypt/live/www.dxnnx.cc/fullchain.pem:/app/ssl/fullchain.pem
     build: .
+    networks:
+      - dxnnx-network
+networks:
+  dxnnx-network:
+    driver: bridge
+    external: true
