@@ -18,7 +18,7 @@ const server = https.createServer(options, app);
 app.use(express.static(path.join(__dirname, 'static')));
 
 // Start the server
-const PORT = 3000;
+const PORT = 8000;
 server.listen(PORT, () => {
   console.log(`Server running on https://localhost:${PORT}`);
 });

@@ -5,7 +5,7 @@ services:
     container_name: breeding
     restart: unless-stopped
     ports:
-      - "8000:3000"
+      - "8000:8000"
     volumes:
       - /etc/letsencrypt/live/www.dxnnx.cc/privkey.pem:/app/ssl/privkey.pem
       - /etc/letsencrypt/live/www.dxnnx.cc/fullchain.pem:/app/ssl/fullchain.pem
