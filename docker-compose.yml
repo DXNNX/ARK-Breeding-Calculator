@@ -16,4 +16,3 @@ services:
 networks:
   dxnnx-network:
     external: true
-    name: dxnnx-network
